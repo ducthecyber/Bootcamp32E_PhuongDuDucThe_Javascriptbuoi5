@@ -79,26 +79,27 @@
         <h3>Bài tập 4: Tính tiền cáp</h3>
         <div class="form-group row">
             <div class="col-4">
-                <select name="khachHang" id="customer" class="form-control">
+                <select name="khachHang" id="loaiKhachHang" class="form-control" onchange="myFunction()">
                     <option value="">Chọn loại khách hàng</option>
-                    <option value="">Nhà Dân</option>
-                    <option value="">Doanh nghiệp</option>
+                    <option value="A">Nhà Dân</option>
+                    <option value="B" id="vip">Doanh nghiệp</option>
                 </select>
             </div>
             <div class="col-4">
                 <input type="text" id="maKhachHang" class="form-control" placeholder="Nhập mã khách hàng">
             </div>
             <div class="col-4">
-                <input type="text" id="soKenh" class="form-control" placeholder="Số kênh cao cấp">
+                <input type="number" id="soKenh" class="form-control" placeholder="Số kênh cao cấp">
             </div>
         </div>
+        <div id="onchange"></div>
         <div class="form-group row">
-            <div class="col-4">
-                <input type="text" id="soKetNoi" placeholder="Số kết nối" class="form-control">
+            <div class="col-4" id="demo">
+                <input type="number" id="soKetNoi" class="form-control" placeholder="Số kết nối">
             </div>
         </div>
-    <button class="btn btn-success" id="btnTinhTienCap">Tính tiền cáp</button>
-    <div class="mt-2 alert alert-success" id="ketQuaBai4"></div>
+        <button class="btn btn-success w-25" id="btnTinhTienCap">Tính tiền cáp</button>
+        <div class="mt-2 alert alert-success w-25" id="ketQuaBai4"></div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -111,6 +112,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+        function myFunction() {
+            if (document.getElementById("loaiKhachHang").value = "B") {
+                
+            }
+            else { "" ;}
+        }
+    </script>
     <script src="./index.js"></script>
 </body>
 

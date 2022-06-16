@@ -76,7 +76,7 @@ document.getElementById("btnThuNhap").onclick = function () {
         thueThuNhap = 60e+6 * 0.05 + 60e+6 * 0.1 + (thuNhapTinhThue - 120e+6) * 0.15;
     }
     else if (thuNhapTinhThue > 210e+6 && thuNhapTinhThue <= 384e+6) {
-        thueThuNhap = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6*0.15 + (thuNhapTinhThue - 210e+6) * 0.2;
+        thueThuNhap = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + (thuNhapTinhThue - 210e+6) * 0.2;
     }
     else if (thuNhapTinhThue > 384e+6 && thuNhapTinhThue <= 624e+6) {
         thueThuNhap = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6 * 0.2 + (thuNhapTinhThue - 384e+6) * 0.25;
@@ -88,4 +88,34 @@ document.getElementById("btnThuNhap").onclick = function () {
         thueThuNhap = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6 * 0.2 + 240e+6 * 0.25 + 336e+6 * 0.30 + (thuNhapTinhThue - 960e+6) * 0.35;
     }
     document.getElementById("ketQuaBai3").innerHTML = thueThuNhap + " VND";
+}
+
+//Bài tập 4: Tính tiền cáp
+document.getElementById("btnTinhTienCap").onclick = function () {
+    //input: soKenh:number, soKetNoi:number, maKhachHang: string, loaiKhachHang: string
+    var channel = Number(document.getElementById("soKenh").value);
+    var connect = Number(document.getElementById("soKetNoi").value);
+    var customer = document.getElementById("loaiKhachHang").value;
+    var id = document.getElementById("maKhachHang").value;
+    //output: ketQuaBai4: number + string
+    var tienPhi = 0;
+    //progress
+    if (customer == "A") {
+        tienPhi = 4.5 + 20.5 + 7.5 * channel;
+    }
+    else if (customer == "B") {
+        if (connect <= 10) {
+            tienPhi = 15 + 50 + 75;
+        }
+        else {
+            tienPhi = 15 + 50 + 75 + (connect - 10) * 5;
+        }
+    }
+    else if (customer == "" || id == "" || channel == "") {
+        tienPhi = "0";
+    }
+    else {
+        tienPhi = "0";
+    }
+    document.getElementById("ketQuaBai4").innerHTML = "Quý khách có mã " + id + " Tiền cáp là $" + tienPhi;
 }
